@@ -1,6 +1,19 @@
 # proyecto2021
 Estructura de Proyecto Lab de Compu II - 2021
+# Videojuego :sparkles:**RETRO**:sparkles:
 
+## Autor
+* **Lujan** Lautaro
+* **Aparicio** Tomas
+
+## Contenido/Descripcion
+
+| Email | Autores |
+|-------|---------|
+|lautiRlujan@gmail.com|Lautaro|
+|tomyaparicio99@gmail.com|Tomas|
+
+Link del Proyecto: [Aula virtual de LAB. de Computacion II](https://campusvirtual.ucc.edu.ar/course/view.php?id=4429)
 ### Requisitos del Primer Parcial
 - [ ] El proyecto debe estar subido al repositorio adecuado "Proyecto2021-ApellidoAlumno1-ApellidoAlumno2"
 - [ ] La página principal debe llamarse index
