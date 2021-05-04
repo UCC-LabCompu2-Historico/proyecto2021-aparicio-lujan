@@ -15,6 +15,7 @@ Estructura de Proyecto Lab de Compu II - 2021
 
 Link del Proyecto: [Aula virtual de LAB. de Computacion II](https://campusvirtual.ucc.edu.ar/course/view.php?id=4429)
 ### Requisitos del Primer Parcial
+* **HTML:**
 - [X] El proyecto debe estar subido al repositorio adecuado "Proyecto2021-ApellidoAlumno1-ApellidoAlumno2"
 - [ ] La página principal debe llamarse index
 - [ ] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripcion y palabras clave
@@ -30,6 +31,7 @@ Link del Proyecto: [Aula virtual de LAB. de Computacion II](https://campusvirtua
 - [ ] Identar correctamente el código (en Webstorm Ctrl+Alt+L)
 - [ ] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
 - [ ] No utilizar etiquetas deprecadas.
+* **Css:**
 - [ ] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
 - [ ] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
 - [ ] El código debe estar pusheado en el repositorio (emplear gh-pages), y no debe haber diferencias entre **main** y **gh-pages** (verificar de realizar el Merge).
@@ -38,7 +40,7 @@ Link del Proyecto: [Aula virtual de LAB. de Computacion II](https://campusvirtua
 - [ ] Los ids de los elementos deben ser unívocos
 - [ ] El repositorio no debe contener archivos innecesarios (no debe contener .idea o .vsc, en todo caso emplear **.gitignore**)
 
-Accesibilidad:
+* **Accesibilidad:**
 - [ ] Toda imagen debe tener su etiqueta alt
 - [ ] Todo ```<input>``` o ```<select>``` debe tener su ```<label>```
 - [ ] Los labels deben contener el atributo **for** (el for debe contener el id del input al cual se referencia) 
