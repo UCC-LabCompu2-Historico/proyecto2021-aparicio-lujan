@@ -1,32 +1,75 @@
+
 body {
+    font-family: "Game Over";
     background: url(../Imagenes/fondo2.gif)no-repeat;
-    background-size: 2150px 1030px;
+    background-attachment: fixed ;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    background-size: cover;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+
+
+
+    /*position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../Imagenes/fondo2.gif) no-repeat;
+    background-size: cover;*/
 
 }
 
 footer{
     position: absolute;
-    bottom: -30px;
-    background-color: #000000;
+    bottom: -160px;
+    background-color: #c1adad;
     height: 50px;
-    width: 2145px;
-    left: -2px;
+    width: 2135px;
+    left: 0px;
+    clear: both;
+
+    /* background-color:blue;
+    bottom: 0px;
+    clear: both;*/
+
 
 
 }
 
-#copy {
+.copy {
     position: relative;
     bottom: 40px;
-    left: 1980px;
+    left: 1990px;
 }
-#nombre {
-    position: relative;
-    bottom: 0px;
-    font-style: italic;
-    left: 5px;
+.Nombres {
+
+
+
 }
 figure{
-    position: absolute;
-    left: 600px;
+    text-align:center;
+    width: 870;
+    height: 425;
+}
+
+
+.Caja{
+    position: relative;
+    background: linear-gradient( to bottom, #a8a8a8, black);
+    box-shadow:  7px 13px 37px #898989;
+
+}
+
+.TituloCaja h1{
+    text-align: center;
+    font-size: 30px;
+
+
 }
