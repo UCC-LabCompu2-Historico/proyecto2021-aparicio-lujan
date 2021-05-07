@@ -28,6 +28,7 @@
 
 footer{
      position: absolute;
+     bottom: 0px;
      background-color: black;
      color: white;
 
@@ -46,6 +47,7 @@ footer h3{
     height: 350px;
     margin-top: 450px;
     right: 150px;
+    border: 5px #000000 solid ;
 }
 
 
@@ -54,7 +56,7 @@ footer h3{
     background-color: #514f3b;
     font-size: 100px;
     text-align: center;
-    border: 50px #ea4d20 ;
+
 
 }
 .Caja h3{
@@ -66,6 +68,7 @@ footer h3{
 
 ::placeholder{
     font-size:50px;
+
 }
 
 #Name{
@@ -76,7 +79,7 @@ footer h3{
     min-width: 400px;
     -webkit-appearance: none;
     height: 35px;
-
+    font-size: 50px;
 
 }
 
@@ -88,5 +91,6 @@ button {
     -webkit-appearance: none;
     height: 50px;
     font-size: 60px;
-    border: 100px blue;
+    border: black 2px solid;
+
 }
