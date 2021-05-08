@@ -1,0 +1,17 @@
+*{
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Game Over";
+}
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background: url(../Imagenes/gameover.gif) no-repeat;
+    justify-content: center;
+    background-size: 1920px 950px;
+    background-attachment: fixed;
+}
