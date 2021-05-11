@@ -8,19 +8,19 @@
 <body>
 <section class="banner" id="banner">
 
-<div class="Caja">
-    <div class="TituloCaja">
-        <h1>- CONTROLS - </h1>
-    </div>
+    <div class="Caja">
+        <div class="TituloCaja">
+            <h1>- CONTROLS - </h1>
+        </div>
 
-    <div class="teclas">
-        <img src="Imagenes/der.png" alt="tecla der" id="der">
-        <img src="Imagenes/izq.png" alt="tecla izq" id="izq">
+        <div class="teclas">
+            <img src="Imagenes/der.png" alt="tecla der" id="der">
+            <img src="Imagenes/izq.png" alt="tecla izq" id="izq">
+        </div>
+        <div>
+            <img src="Imagenes/espacio.png" alt="tecla esp" id="esp">
+        </div>
     </div>
-    <div>
-        <img src="Imagenes/espacio.png" alt="tecla esp" id="esp">
-    </div>
-</div>
 
     <div class="juego">
         <canvas id="lienzoJuego" width="1300" height="900" style="border:1px solid #d3d3d3;">
@@ -32,8 +32,8 @@
 
             var miimagen = new Image();
             miimagen.src = "Imagenes/chiste.jpg";
-            miimagen.onload = function (){
-               ctx.drawImage(miimagen,310,50);
+            miimagen.onload = function () {
+                ctx.drawImage(miimagen, 310, 50);
             }
         </script>
     </div>

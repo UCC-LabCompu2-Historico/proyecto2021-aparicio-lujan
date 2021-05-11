@@ -1,4 +1,4 @@
-*{
+* {
     overflow-y: hidden;
     margin: 0;
     padding: 0;
@@ -6,17 +6,18 @@
     font-family: "Game Over";
     background-color: black;
 }
-.content{
+
+.content {
     max-width: 500px;
     text-align: center;
     margin: 0 auto;
     padding-top: 10px;
 
-   
-    
+
 }
-.abajo{
-    
+
+.abajo {
+
     max-width: 600px;
     text-align: center;
     margin: 0 auto;

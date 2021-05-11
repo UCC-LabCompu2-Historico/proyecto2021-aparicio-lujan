@@ -1,4 +1,4 @@
-*{
+* {
     overflow-y: hidden;
     margin: 0;
     padding: 0;
@@ -6,7 +6,8 @@
     font-family: "Game Over";
     src: url("../Fuentes/game_over.ttf");
 }
-.banner{
+
+.banner {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -16,69 +17,73 @@
     background-size: 1920px 950px;
     background-attachment: fixed;
 }
-.content{
+
+.content {
 
     max-width: 900px;
     text-align: center;
     margin: 0 auto;
     padding-top: 100px;
 }
-.content img{
+
+.content img {
 
     width: 700px;
     top: 30px;
 }
 
-footer{
-     position: absolute;
-     bottom: 0px;
-     background-color: black;
-     color: white;
+footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    color: white;
 
 }
-footer h3{
+
+footer h3 {
 
     font-size: 50px;
 
 
 }
+
 .Caja {
     position: absolute;
-    background: linear-gradient( to bottom, #fd6b6b, #381f1f);
-    box-shadow:  7px 10px 20px #a33434;
+    background: linear-gradient(to bottom, #fd6b6b, #381f1f);
+    box-shadow: 7px 10px 20px #a33434;
     width: 550px;
     height: 350px;
     margin-top: 450px;
     right: 150px;
-    border: 5px #000000 solid ;
+    border: 5px #000000 solid;
 }
 
 
-
-.Caja h1{
+.Caja h1 {
     background-color: #514f3b;
     font-size: 100px;
     text-align: center;
 
 
 }
-.Caja h3{
+
+.Caja h3 {
 
     font-size: 70px;
 
 
 }
 
-::placeholder{
-    font-size:50px;
+::placeholder {
+    font-size: 50px;
 
 }
 
-#Name{
+#Name {
     border-style: hidden;
-    display:block;
+    display: block;
     padding: 5px 10px;
-    margin:10px auto;
+    margin: 10px auto;
     min-width: 400px;
     -webkit-appearance: none;
     height: 35px;
@@ -86,7 +91,7 @@ footer h3{
 
 }
 
-.button{
+.button {
     height: 50px;
     width: 300px;
     font-size: 60px;
@@ -95,6 +100,7 @@ footer h3{
     margin-left: 21.5%;
 
 }
+
 a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
@@ -106,8 +112,7 @@ a.button {
 }
 
 
-
-#Difi{
+#Difi {
 
     border-style: hidden;
     display: block;
@@ -118,7 +123,8 @@ a.button {
 
 
 }
-.difi h3{
+
+.difi h3 {
 
     font-size: 70px;
 
