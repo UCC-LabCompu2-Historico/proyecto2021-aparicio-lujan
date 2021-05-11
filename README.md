@@ -1,7 +1,7 @@
 # proyecto2021
 Estructura de Proyecto Lab de Compu II - 2021
 # Videojuego :sparkles:**RETRO**:sparkles:
-
+# **RECOMENDACION: Instalar la fuente que esta dentro de la carpeta "Fuentes"**
 ## Autor
 * **Lujan** Lautaro
 * **Aparicio** Tomas
