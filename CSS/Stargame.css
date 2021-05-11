@@ -1,75 +1,120 @@
-
-body {
-    font-family: "Game Over";
-    background: url(../Imagenes/fondo2.gif)no-repeat;
-    background-attachment: fixed ;
-    overflow-x: hidden;
+*{
     overflow-y: hidden;
-    display: flex;
-    background-size: cover;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Game Over";
+    src: url("../Fuentes/game_over.ttf");
+}
+.banner{
     position: relative;
     width: 100%;
     min-height: 100vh;
-
-
-
-
-    /*position: relative;
-    width: 100%;
-    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     background: url(../Imagenes/fondo2.gif) no-repeat;
-    background-size: cover;*/
+    justify-content: center;
+    background-size: 1920px 950px;
+    background-attachment: fixed;
+}
+.content{
 
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+.content img{
+
+    width: 700px;
+    top: 30px;
 }
 
 footer{
+     position: absolute;
+     bottom: 0px;
+     background-color: black;
+     color: white;
+
+}
+footer h3{
+
+    font-size: 50px;
+
+
+}
+.Caja {
     position: absolute;
-    bottom: -160px;
-    background-color: #c1adad;
-    height: 50px;
-    width: 2135px;
-    left: 0px;
-    clear: both;
-
-    /* background-color:blue;
-    bottom: 0px;
-    clear: both;*/
-
-
-
-}
-
-.copy {
-    position: relative;
-    bottom: 40px;
-    left: 1990px;
-}
-.Nombres {
-
-
-
-}
-figure{
-    text-align:center;
-    width: 870;
-    height: 425;
+    background: linear-gradient( to bottom, #fd6b6b, #381f1f);
+    box-shadow:  7px 10px 20px #a33434;
+    width: 550px;
+    height: 350px;
+    margin-top: 450px;
+    right: 150px;
+    border: 5px #000000 solid ;
 }
 
 
-.Caja{
-    position: relative;
-    background: linear-gradient( to bottom, #a8a8a8, black);
-    box-shadow:  7px 13px 37px #898989;
 
-}
-
-.TituloCaja h1{
+.Caja h1{
+    background-color: #514f3b;
+    font-size: 100px;
     text-align: center;
-    font-size: 30px;
+
+
+}
+.Caja h3{
+
+    font-size: 70px;
+
+
+}
+
+::placeholder{
+    font-size:50px;
+
+}
+
+#Name{
+    border-style: hidden;
+    display:block;
+    padding: 5px 10px;
+    margin:10px auto;
+    min-width: 400px;
+    -webkit-appearance: none;
+    height: 35px;
+    font-size: 50px;
+
+}
+
+.button{
+    height: 50px;
+    width: 300px;
+    font-size: 60px;
+    padding: 0;
+    background: white;
+    margin-left: 21.5%;
+
+}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    color: initial;
+}
+
+
+
+#Difi{
+
+    border-style: hidden;
+    display: block;
+    margin: 30px auto;
+    min-width: 200px;
+    height: 40px;
+    font-size: 60px;
 
 
 }
