@@ -13,7 +13,19 @@
         <img src="Imagenes/logofinal.gif" alt="logo">
       </div>
     <div class="abajo">
-        <img src="Imagenes/textogame.gif" alt="logo">
+        <canvas id="lienzoGO" width="450" height="250" style="border:1px solid #d3d3d3;">
+
+        </canvas>
+        <script>
+            var lienzo = document.getElementById("lienzoGO");
+            var ctx = lienzo.getContext("2d");
+
+            var miimagen = new Image();
+            miimagen.src = "Imagenes/textogame.gif";
+            miimagen.onload = function (){
+                ctx.drawImage(miimagen,0,0);
+            }
+        </script>
       </div>
       
 
