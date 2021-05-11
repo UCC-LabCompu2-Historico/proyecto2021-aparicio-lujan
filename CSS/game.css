@@ -16,15 +16,7 @@
     background-attachment: fixed;
 }
 
-.banner .juego{
-    position: relative;
-    right: 250px;
-    padding-top: 50px;
-    border-width:5px;
-    border-style: solid;
-    border-color:white;
-    padding:0 350px 0 350px;
-}
+
 .Caja {
     position: absolute;
     background: linear-gradient( to bottom, #6b83fd, #311f38);
@@ -77,4 +69,9 @@ footer h3{
 
     font-size: 50px;
 
+}
+.banner .juego{
+    position: relative;
+    right: 250px;
+    padding-top: 50px;
 }

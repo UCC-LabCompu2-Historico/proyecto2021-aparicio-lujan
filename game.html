@@ -23,7 +23,19 @@
 </div>
 
     <div class="juego">
-    <img src="Imagenes/chiste.jpg">
+        <canvas id="lienzo" width="1300" height="900" style="border:1px solid #d3d3d3;">
+
+        </canvas>
+        <script>
+            var lienzo = document.getElementById("lienzo");
+            var ctx = lienzo.getContext("2d");
+
+            var miimagen = new Image();
+            miimagen.src = "Imagenes/chiste.jpg";
+            miimagen.onload = function (){
+               ctx.drawImage(miimagen,310,50);
+            }
+        </script>
     </div>
 
 </section>
