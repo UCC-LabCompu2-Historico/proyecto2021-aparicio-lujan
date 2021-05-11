@@ -33,7 +33,7 @@
 .Caja h1 {
     text-align: center;
     font-size: 100px;
-    text-align: center;
+
 
 
 }
@@ -69,7 +69,6 @@
 
 footer {
     position: absolute;
-    bottom: 0px;
     background-color: black;
     color: white;
 
@@ -85,4 +84,17 @@ footer h3 {
     position: relative;
     right: 250px;
     padding-top: 50px;
+}
+
+.caja2{
+    position: absolute;
+    background: linear-gradient(to bottom, #6b83fd, #311f38);
+    box-shadow: 7px 10px 20px #4834a3;
+    height: 50px;
+    width: 350px;
+    color:black;
+    margin-left: 1370px;
+    margin-top: 200px;
+    font-size: 40px;
+    border: 5px #000000 solid;
 }

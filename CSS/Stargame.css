@@ -18,12 +18,7 @@
     background-attachment: fixed;
 }
 
-.content {
 
-    max-width: 900px;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 100px;
 }
 
 .content img {
@@ -34,10 +29,9 @@
 
 footer {
     position: absolute;
-    bottom: 0px;
-    background-color: black;
-    color: white;
-
+    bottom: 0%;
+   color: white;
+    
 }
 
 footer h3 {
@@ -104,19 +98,25 @@ footer h3 {
 a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
-    appearance: button;
+
     text-align: center;
     justify-content: center;
     text-decoration: none;
     color: initial;
 }
 
+a.button:hover{
+    background-color: thistle;
+
+
+}  
+
 
 #Difi {
 
     border-style: hidden;
     display: block;
-    margin: 30px auto;
+    margin: 20px auto;
     min-width: 200px;
     height: 40px;
     font-size: 60px;
