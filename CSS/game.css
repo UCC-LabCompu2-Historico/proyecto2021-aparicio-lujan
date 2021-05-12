@@ -35,7 +35,6 @@
     font-size: 100px;
 
 
-
 }
 
 #der {
@@ -86,13 +85,13 @@ footer h3 {
     padding-top: 50px;
 }
 
-.caja2{
+.caja2 {
     position: absolute;
     background: linear-gradient(to bottom, #6b83fd, #311f38);
     box-shadow: 7px 10px 20px #4834a3;
     height: 50px;
     width: 350px;
-    color:black;
+    color: black;
     margin-left: 1370px;
     margin-top: 200px;
     font-size: 40px;

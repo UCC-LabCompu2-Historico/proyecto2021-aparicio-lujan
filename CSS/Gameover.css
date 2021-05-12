@@ -25,7 +25,8 @@
 
 
 }
-.textos{
+
+.textos {
     position: absolute;
     color: white;
     width: 100%;
@@ -33,9 +34,10 @@
     font-size: 60px;
 
 }
-.textos h2{
+
+.textos h2 {
 
     margin-top: 20px;
-    
+
 
 }

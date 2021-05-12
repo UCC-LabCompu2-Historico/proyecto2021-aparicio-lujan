@@ -19,8 +19,6 @@
 }
 
 
-
-
 .content img {
 
     width: 700px;
@@ -30,8 +28,8 @@
 footer {
     position: absolute;
     bottom: 0;
-   color: white;
-    
+    color: white;
+
 }
 
 footer h3 {
@@ -105,11 +103,11 @@ a.button {
     color: initial;
 }
 
-a.button:hover{
+a.button:hover {
     background-color: thistle;
 
 
-}  
+}
 
 
 #Difi {
