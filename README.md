@@ -26,7 +26,7 @@ Estructura de Proyecto Lab de Compu II - 2021
 * 3ra parte: GameOver, solo se puede ingresar a esta pagina cuando el usuario se quede sin vida.
 
 
-Link del Proyecto: [Space Invader](https://campusvirtual.ucc.edu.ar/course/view.php?id=4429)
+Link del Proyecto: [Space Invader](https://ucc-labcompu2.github.io/proyecto2021-aparicio-lujan-1/)
 ### Requisitos del Primer Parcial
 * **HTML:**
 - [X] El proyecto debe estar subido al repositorio adecuado "Proyecto2021-ApellidoAlumno1-ApellidoAlumno2"
@@ -34,8 +34,8 @@ Link del Proyecto: [Space Invader](https://campusvirtual.ucc.edu.ar/course/view.
 - [X] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripcion y palabras clave
 - [X] Emplear al menos 3 etiquetas semánticas
 - [X] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
-- [ ] Modificar el Readme.MD y colocar información del proyecto/página (mínimamente: título del proyecto, autores, link de gh-pages, contenido de la página,  listado de tecnologías usadas, etc)
-- [ ] Publicar la Web empleando GitHubPages
+- [X] Modificar el Readme.MD y colocar información del proyecto/página (mínimamente: título del proyecto, autores, link de gh-pages, contenido de la página,  listado de tecnologías usadas, etc)
+- [X] Publicar la Web empleando GitHubPages
 - [X] La estructura de la página debe estar definida con ```<div></div>```
 - [X] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio.
 - [X] Debe haber por lo menos una etiqueta ```<img>``` en la página.
@@ -47,7 +47,7 @@ Link del Proyecto: [Space Invader](https://campusvirtual.ucc.edu.ar/course/view.
 * **Css:**
 - [X] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
 - [X] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
-- [ ] El código debe estar pusheado en el repositorio (emplear gh-pages), y no debe haber diferencias entre **main** y **gh-pages** (verificar de realizar el Merge).
+- [X] El código debe estar pusheado en el repositorio (emplear gh-pages), y no debe haber diferencias entre **main** y **gh-pages** (verificar de realizar el Merge).
 - [X] No debe haber errores presentes (realizar *Code* > *Inspect Code* para verificar que no haya errores)
 - [x] Todas las etiquetas deben estar correctamente cerradas
 - [X] Los ids de los elementos deben ser unívocos
