@@ -26,7 +26,7 @@ Estructura de Proyecto Lab de Compu II - 2021
 * 3ra parte: GameOver, solo se puede ingresar a esta pagina cuando el usuario se quede sin vida.
 
 
-Link del Proyecto: [Aula virtual de LAB. de Computacion II](https://campusvirtual.ucc.edu.ar/course/view.php?id=4429)
+Link del Proyecto: [Space Invader](https://campusvirtual.ucc.edu.ar/course/view.php?id=4429)
 ### Requisitos del Primer Parcial
 * **HTML:**
 - [X] El proyecto debe estar subido al repositorio adecuado "Proyecto2021-ApellidoAlumno1-ApellidoAlumno2"
@@ -41,14 +41,14 @@ Link del Proyecto: [Aula virtual de LAB. de Computacion II](https://campusvirtua
 - [X] Debe haber por lo menos una etiqueta ```<img>``` en la página.
 - [X] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los sketch/mockups). Es importante que contenga SKETCH y MOCKUP
 - [X] Debe contener un ```<canvas>```, para que posteriormente (en la 2da etapa) se grafique alguna imagen representativa del ejercicio. (el desarrollo del gráfico se realizará cuando se vea la unidad de “Orientación a Eventos”)
-- [ ] Identar correctamente el código (en Webstorm Ctrl+Alt+L)
+- [X] Identar correctamente el código (en Webstorm Ctrl+Alt+L)
 - [X] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
-- [x] No utilizar etiquetas deprecadas.
+- [X] No utilizar etiquetas deprecadas.
 * **Css:**
 - [X] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
-- [x] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
+- [X] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
 - [ ] El código debe estar pusheado en el repositorio (emplear gh-pages), y no debe haber diferencias entre **main** y **gh-pages** (verificar de realizar el Merge).
-- [ ] No debe haber errores presentes (realizar *Code* > *Inspect Code* para verificar que no haya errores)
+- [X] No debe haber errores presentes (realizar *Code* > *Inspect Code* para verificar que no haya errores)
 - [x] Todas las etiquetas deben estar correctamente cerradas
 - [X] Los ids de los elementos deben ser unívocos
 - [X] El repositorio no debe contener archivos innecesarios (no debe contener .idea o .vsc, en todo caso emplear **.gitignore**)
