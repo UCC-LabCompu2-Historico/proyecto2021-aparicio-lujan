@@ -2,6 +2,9 @@
 Estructura de Proyecto Lab de Compu II - 2021
 # Videojuego :sparkles:**RETRO**:sparkles:
 # **RECOMENDACION: Instalar la fuente que esta dentro de la carpeta "Fuentes"**
+
+## Link del Proyecto: [Space Invader](https://ucc-labcompu2.github.io/proyecto2021-aparicio-lujan-1/)
+
 ## Autor
 * **Lujan** Lautaro
 * **Aparicio** Tomas
@@ -26,7 +29,6 @@ Estructura de Proyecto Lab de Compu II - 2021
 * 3ra parte: GameOver, solo se puede ingresar a esta pagina cuando el usuario se quede sin vida.
 
 
-Link del Proyecto: [Space Invader](https://ucc-labcompu2.github.io/proyecto2021-aparicio-lujan-1/)
 ### Requisitos del Primer Parcial
 * **HTML:**
 - [X] El proyecto debe estar subido al repositorio adecuado "Proyecto2021-ApellidoAlumno1-ApellidoAlumno2"
