@@ -4,7 +4,9 @@
     <option name="SPLITTER_PROPORTION" value="0.5149213" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55e8b80e-4116-45b3-87a3-92827c6a0c72" name="Default Changelist" comment="" />
+    <list default="true" id="55e8b80e-4116-45b3-87a3-92827c6a0c72" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Git/Ejercicio2/ejercicios2021-tomyaparicio" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -68,7 +70,8 @@
       <workItem from="1620603386626" duration="730000" />
       <workItem from="1620673223047" duration="1975000" />
       <workItem from="1620771318487" duration="2842000" />
-      <workItem from="1620779079802" duration="5746000" />
+      <workItem from="1620779079802" duration="6821000" />
+      <workItem from="1623616840168" duration="18000" />
     </task>
     <servers />
   </component>

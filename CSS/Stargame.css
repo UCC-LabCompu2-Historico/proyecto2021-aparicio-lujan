@@ -3,8 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Game Over";
-    src: url("../Fuentes/game_over.ttf");
+    font-family: 'Press Start 2P', cursive;
 }
 
 .banner {
@@ -34,7 +33,7 @@ footer {
 
 footer h3 {
 
-    font-size: 50px;
+    font-size: 20px;
 
 
 }
@@ -53,41 +52,43 @@ footer h3 {
 
 .Caja h1 {
     background-color: #514f3b;
-    font-size: 100px;
+    font-size: 30px;
     text-align: center;
+    padding: ;
 
 
 }
+.Nombre 
+ {
 
-.Caja h3 {
-
-    font-size: 70px;
+    font-size: 25px;
+    padding: 5px;
 
 
 }
 
 ::placeholder {
-    font-size: 50px;
+    font-size: 10px;
 
 }
 
 #Name {
     border-style: hidden;
     display: block;
-    padding: 5px 10px;
-    margin: 10px auto;
+    padding: 15px;
+    margin: 30px auto;
     min-width: 400px;
     -webkit-appearance: none;
     height: 35px;
-    font-size: 50px;
+    font-size: 20px;
 
 }
 
 .button {
     height: 50px;
     width: 300px;
-    font-size: 60px;
-    padding: 0;
+    font-size: 30px;
+    padding: 15px;
     background: white;
     margin-left: 21.5%;
 
@@ -117,14 +118,14 @@ a.button:hover {
     margin: 20px auto;
     min-width: 200px;
     height: 40px;
-    font-size: 60px;
+    font-size: 20px;
 
 
 }
 
-.difi h3 {
+.difi {
 
-    font-size: 70px;
+    font-size: 25px;
 
 
 }

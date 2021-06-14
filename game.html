@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <title>Space Invader</title>
     <link rel="stylesheet" href="CSS/game.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="Imagenes/loguito.jpg">
+    <script type="text/javascript" src="juego.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+
+
 </head>
 <body>
 <section class="banner" id="banner">
     <div class="caja2">
-        <h2>- Name: Tomas</h2>
+        <h2>- Name: Lautaro</h2>
     </div>
 
 
@@ -28,19 +33,8 @@
     </div>
 
     <div class="juego">
-        <canvas id="lienzoJuego" width="1300" height="900" style="border:1px solid #d3d3d3;">
-
-        </canvas>
-        <script>
-            var lienzo = document.getElementById("lienzoJuego");
-            var ctx = lienzo.getContext("2d");
-
-            var miimagen = new Image();
-            miimagen.src = "Imagenes/chiste.jpg";
-            miimagen.onload = function () {
-                ctx.drawImage(miimagen, 310, 50);
-            }
-        </script>
+        
+        <canvas id="game-canvas" width="640" height="640"></canvas>
     </div>
 
 </section>
