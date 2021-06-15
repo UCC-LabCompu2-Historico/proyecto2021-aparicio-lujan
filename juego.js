@@ -1,3 +1,7 @@
+/**
+ * creacion de clase bases
+ * return function()
+ */
 (function(){
   var initializing = false, fnTest = /xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/;
 
@@ -39,9 +43,11 @@
           prop[name];
     }
 
-    // constructor de una clase "tonta"
+    /** constructor de una clase "tonta"
+     * @method Class
+     * @constructor
+     */
     function Class() {
-      // All construction is actually done in the init method
       if ( !initializing && this.init )
         this.init.apply(this, arguments);
     }
@@ -64,11 +70,17 @@
 // shims
 //
 // ###################################################################
+
+/**
+ * configuracion de animaciones
+ */
 (function() {
   var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
   window.requestAnimationFrame = requestAnimationFrame;
 })();
-
+/**
+ *
+ */
 (function() {
   if (!window.performance.now) {
     window.performance.now = (!Date.now) ? function() { return new Date().getTime(); } :
@@ -101,22 +113,58 @@ var ALIEN_SQUAD_WIDTH = 11 * ALIEN_X_MARGIN;
 // funciones de utilidad y clases
 //
 // ###################################################################
+/**
+ * obtener una arbitracion random
+ * @method getRandomArbitrary
+ * @param min
+ * @param max
+ * @returns {*}
+ */
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+/**
+ * ovtener un int random
+ * @method getRandomInt
+ * @param min
+ * @param max
+ * @returns {*}
+ */
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/**
+ * @method clamp
+ * @param num
+ * @param min
+ * @param max
+ * @returns {number}
+ */
 function clamp(num, min, max) {
   return Math.min(Math.max(num, min), max);
 }
 
+/**
+ * evaluacion de rango
+ * @method valueInRange
+ * @param value
+ * @param min
+ * @param max
+ * @returns {boolean}
+ */
 function valueInRange(value, min, max) {
   return (value <= max) && (value >= min);
 }
 
+/**
+ * checkeo de colisiones
+ * @method checkRectCollision
+ * @param A
+ * @param B
+ * @returns {boolean}
+ */
 function checkRectCollision(A, B) {
   var xOverlap = valueInRange(A.x, B.x, B.x + B.w) ||
       valueInRange(B.x, A.x, A.x + A.w);
@@ -131,7 +179,11 @@ var Point2D = Class.extend({
     this.x = (typeof x === 'undefined') ? 0 : x;
     this.y = (typeof y === 'undefined') ? 0 : y;
   },
-
+  /**
+   * seteo de funcion
+   * @param x
+   * @param y
+   */
   set: function(x, y) {
     this.x = x;
     this.y = y;
@@ -145,7 +197,13 @@ var Rect = Class.extend({
     this.w = (typeof w === 'undefined') ? 0 : w;
     this.h = (typeof h === 'undefined') ? 0 : h;
   },
-
+  /**
+   * seteo de funcion
+   * @param x
+   * @param y
+   * @param w
+   * @param h
+   */
   set: function(x, y, w, h) {
     this.x = x;
     this.y = y;
@@ -191,17 +249,23 @@ var BaseSprite = Class.extend({
     this.bounds = new Rect(x, y, this.img.width, this.img.height);
     this.doLogic = true;
   },
-
+  /** actualizacion de funcion
+   * @param dt
+   */
   update: function(dt) { },
 
   _updateBounds: function() {
     this.bounds.set(this.position.x, this.position.y, ~~(0.5 + this.img.width * this.scale.x), ~~(0.5 + this.img.height * this.scale.y));
   },
-
+  /** dibujo de imagen
+   */
   _drawImage: function() {
     ctx.drawImage(this.img, this.position.x, this.position.y);
   },
-
+  /**
+   * dibujo
+   * @param resized
+   */
   draw: function(resized) {
     this._updateBounds();
 
@@ -215,7 +279,10 @@ var SheetSprite = BaseSprite.extend({
     this.clipRect = clipRect;
     this.bounds.set(x, y, this.clipRect.w, this.clipRect.h);
   },
-
+  /**
+   * actualizacion de funcion
+   * @param dt
+   */
   update: function(dt) {},
 
   _updateBounds: function() {
@@ -223,7 +290,10 @@ var SheetSprite = BaseSprite.extend({
     var h = ~~(0.5 + this.clipRect.h * this.scale.y);
     this.bounds.set(this.position.x - w/2, this.position.y - h/2, w, h);
   },
-
+  /**
+   * dibujo de imagen
+   * @private
+   */
   _drawImage: function() {
     ctx.save();
     ctx.transform(this.scale.x, 0, 0, this.scale.y, this.position.x, this.position.y);
@@ -231,7 +301,10 @@ var SheetSprite = BaseSprite.extend({
     ctx.restore();
 
   },
-
+  /**
+   * dibujo
+   * @param resized
+   */
   draw: function(resized) {
     this._super(resized);
   }
@@ -247,18 +320,24 @@ var Player = SheetSprite.extend({
     this.bulletDelayAccumulator = 0;
     this.score = 0;
   },
-
+  /**
+   * reseteo de la funcion
+   */
   reset: function() {
     this.lives = 3;
     this.score = 0;
     this.position.set(CANVAS_WIDTH/2, CANVAS_HEIGHT - 70);
   },
-
+  /**
+   * disparos
+   */
   shoot: function() {
     var bullet = new Bullet(this.position.x, this.position.y - this.bounds.h / 2, 1, 1000);
     this.bullets.push(bullet);
   },
-
+  /**
+   * resolucion del input
+   */
   handleInput: function() {
     if (isKeyDown(LEFT_KEY)) {
       this.xVel = -175;
@@ -273,7 +352,10 @@ var Player = SheetSprite.extend({
       }
     }
   },
-
+  /**
+   * actualizacion de los disparos
+   * @param dt
+   */
   updateBullets: function(dt) {
     for (var i = this.bullets.length - 1; i >= 0; i--) {
       var bullet = this.bullets[i];
@@ -285,19 +367,24 @@ var Player = SheetSprite.extend({
       }
     }
   },
-
+  /**
+   * actualizacion de tiempo transcurrido entre frame
+   * @param dt
+   */
   update: function(dt) {
-    //tiempo de actualización transcurrido entre tomas
+
     this.bulletDelayAccumulator += dt;
 
-    // apply x vel
     this.position.x += this.xVel * dt;
 
-    // cap player position in screen bounds
+    // posicion del jugador
     this.position.x = clamp(this.position.x, this.bounds.w/2, CANVAS_WIDTH - this.bounds.w/2);
     this.updateBullets(dt);
   },
-
+  /**
+   * dibujo de balas
+   * @param resized
+   */
   draw: function(resized) {
     this._super(resized);
 
@@ -312,13 +399,23 @@ var Player = SheetSprite.extend({
 });
 
 var Bullet = BaseSprite.extend({
+  /**
+   *  posicion de los disparos y velocidad
+   * @param x
+   * @param y
+   * @param direction
+   * @param speed
+   */
   init: function(x, y, direction, speed) {
     this._super(bulletImg, x, y);
     this.direction = direction;
     this.speed = speed;
     this.alive = true;
   },
-
+  /**
+   * actualizacion de funcion
+   * @param dt
+   */
   update: function(dt) {
     this.position.y -= (this.speed * this.direction) * dt;
 
@@ -326,7 +423,10 @@ var Bullet = BaseSprite.extend({
       this.alive = false;
     }
   },
-
+  /**
+   * dibujo de disparos
+   * @param resized
+   */
   draw: function(resized) {
     this._super(resized);
   }
@@ -344,16 +444,23 @@ var Enemy = SheetSprite.extend({
     this.doShoot - false;
     this.bullet = null;
   },
-
+  /**
+   * funcion de posicionamiento
+   */
   toggleFrame: function() {
     this.onFirstState = !this.onFirstState;
     this.clipRect = (this.onFirstState) ? this.clipRects[0] : this.clipRects[1];
   },
-
+  /**
+   * funcion de los disparos y su posicion
+   */
   shoot: function() {
     this.bullet = new Bullet(this.position.x, this.position.y + this.bounds.w/2, -1, 500);
   },
-
+  /**
+   * actualizacion de parametros
+   * @param dt
+   */
   update: function(dt) {
     this.stepAccumulator += dt;
 
@@ -383,7 +490,10 @@ var Enemy = SheetSprite.extend({
       this.bullet = null;
     }
   },
-
+  /**
+   * dibujo de los disparos si son nulos
+   * @param resized
+   */
   draw: function(resized) {
     this._super(resized);
     if (this.bullet !== null && this.bullet.alive) {
@@ -393,11 +503,16 @@ var Enemy = SheetSprite.extend({
 });
 
 var ParticleExplosion = Class.extend({
+  /**
+   * funcion de particulas en la explosiones
+   */
   init: function() {
     this.particlePool = [];
     this.particles = [];
   },
-
+  /**
+   * dibujo de la funcion
+   */
   draw: function() {
     for (var i = this.particles.length - 1; i >= 0; i--) {
       var particle = this.particles[i];
@@ -420,7 +535,18 @@ var ParticleExplosion = Class.extend({
       }
     }
   },
-
+  /**
+   * creacion de las explosiones
+   * @param x
+   * @param y
+   * @param color
+   * @param number
+   * @param width
+   * @param height
+   * @param spd
+   * @param grav
+   * @param lif
+   */
   createExplosion: function(x, y, color, number, width, height, spd, grav, lif) {
     for (var i =0;i < number;i++) {
       var angle = Math.floor(Math.random()*360);
@@ -459,6 +585,10 @@ var ParticleExplosion = Class.extend({
 // Inicializacion de funciones
 //
 // ###################################################################
+/**
+ * comenzar a dibujar el juego en el canvas
+ * @method initCanvas
+ */
 function initCanvas() {
 // creacion de canvas y context
   canvas = document.getElementById('game-canvas');
@@ -478,6 +608,10 @@ function initCanvas() {
   document.addEventListener('keyup', onKeyUp);
 }
 
+/**
+ * pre dibujo en el canvas
+ *  @method preDrawImages
+ */
 function preDrawImages() {
   var canvas = drawIntoCanvas(2, 8, function(ctx) {
     ctx.fillStyle = 'white';
@@ -487,6 +621,11 @@ function preDrawImages() {
   bulletImg.src = canvas.toDataURL();
 }
 
+/**
+ * suavizado de imagen
+ * @method setImageSmoothing
+ * @param value
+ */
 function setImageSmoothing(value) {
   this.ctx['imageSmoothingEnabled'] = value;
   this.ctx['mozImageSmoothingEnabled'] = value;
@@ -495,6 +634,9 @@ function setImageSmoothing(value) {
   this.ctx['msImageSmoothingEnabled'] = value;
 }
 
+/**
+ * iniciacion del juego
+ */
 function initGame() {
   dirtyRects = [];
   aliens = [];
@@ -504,6 +646,10 @@ function initGame() {
   drawBottomHud();
 }
 
+/**
+ * seteo de la formacion de los aliens
+ * @method setupAlienFormation
+ */
 function setupAlienFormation() {
   alienCount = 0;
   for (var i = 0, len = 5 * 11; i < len; i++) {
@@ -522,12 +668,20 @@ function setupAlienFormation() {
   }
 }
 
+/**
+ * reseteo de la formacion
+ * @method reset
+ */
 function reset() {
   aliens = [];
   setupAlienFormation();
   player.reset();
 }
 
+/**
+ * inicializacion
+ * @method init
+ */
 function init() {
   initCanvas();
   keyStates = [];
@@ -541,10 +695,22 @@ function init() {
 // funciones de entradas utiles
 //
 // ###################################################################
+/**
+ * teclas de movimiento y disparo
+ * @method isKeyDown
+ * @param key
+ * @returns {*}
+ */
 function isKeyDown(key) {
   return keyStates[key];
 }
 
+/**
+ * teclas de movimiento y disparo
+ * @method wasKeyPressed
+ * @param key
+ * @returns {boolean}
+ */
 function wasKeyPressed(key) {
   return !prevKeyStates[key] && keyStates[key];
 }
@@ -554,6 +720,11 @@ function wasKeyPressed(key) {
 // funciones de Drawing & update
 //
 // ###################################################################
+/**
+ * actualizacion de aliens
+ * @method updateAliens
+ * @param dt
+ */
 function updateAliens(dt) {
   if (updateAlienLogic) {
     updateAlienLogic = false;
@@ -588,6 +759,10 @@ function updateAliens(dt) {
   alienYDown = 0;
 }
 
+/**
+ * destruccion de los aliens si le das
+ * @method resolveBulletEnemyCollisions
+ */
 function resolveBulletEnemyCollisions() {
   var bullets = player.bullets;
 
@@ -604,6 +779,10 @@ function resolveBulletEnemyCollisions() {
   }
 }
 
+/**
+ * destruccion si el jugador es disparado
+ * @method resolveBulletPlayerCollisions
+ */
 function resolveBulletPlayerCollisions() {
   for (var i = 0, len = aliens.length; i < len; i++) {
     var alien = aliens[i];
@@ -623,11 +802,20 @@ function resolveBulletPlayerCollisions() {
   }
 }
 
+/**
+ * resolucion de colisiones
+ * @method resolveCollisions
+ */
 function resolveCollisions() {
   resolveBulletEnemyCollisions();
   resolveBulletPlayerCollisions();
 }
 
+/**
+ * actualizacion del juego
+ * @method updateGame
+ * @param dt
+ */
 function updateGame(dt) {
   player.handleInput();
   prevKeyStates = keyStates.slice();
@@ -636,6 +824,14 @@ function updateGame(dt) {
   resolveCollisions();
 }
 
+/**
+ * dibuja en el canvas
+ * @method drawIntoCanvas
+ * @param width
+ * @param height
+ * @param drawFunc
+ * @returns {HTMLCanvasElement}
+ */
 function drawIntoCanvas(width, height, drawFunc) {
   var canvas = document.createElement('canvas');
   canvas.width = width;
@@ -645,23 +841,55 @@ function drawIntoCanvas(width, height, drawFunc) {
   return canvas;
 }
 
+/**
+ * creacion de texto
+ * @method fillText
+ * @param text
+ * @param x
+ * @param y
+ * @param color
+ * @param fontSize
+ */
 function fillText(text, x, y, color, fontSize) {
   if (typeof color !== 'undefined') ctx.fillStyle = color;
   if (typeof fontSize !== 'undefined') ctx.font = fontSize + 'px Play';
   ctx.fillText(text, x, y);
 }
 
+/**
+ * centrado de texto
+ * @method fillCenteredText
+ * @param text
+ * @param x
+ * @param y
+ * @param color
+ * @param fontSize
+ */
 function fillCenteredText(text, x, y, color, fontSize) {
   var metrics = ctx.measureText(text);
   fillText(text, x - metrics.width/2, y, color, fontSize);
 }
 
+/**
+ * parpadeo de los score y de los textos
+ * @method fillBlinkingText
+ * @param text
+ * @param x
+ * @param y
+ * @param blinkFreq
+ * @param color
+ * @param fontSize
+ */
 function fillBlinkingText(text, x, y, blinkFreq, color, fontSize) {
   if (~~(0.5 + Date.now() / blinkFreq) % 2) {
     fillCenteredText(text, x, y, color, fontSize);
   }
 }
 
+/**
+ * creacion de un hud inferior
+ * @method drawBottomHud
+ */
 function drawBottomHud() {
   ctx.fillStyle = '#02ff12';
   ctx.fillRect(0, CANVAS_HEIGHT - 30, CANVAS_WIDTH, 2);
@@ -674,6 +902,11 @@ function drawBottomHud() {
   fillBlinkingText('00', CANVAS_WIDTH - 25, CANVAS_HEIGHT - 7.5, TEXT_BLINK_FREQ);
 }
 
+/**
+ * dibujo de los aliens
+ * @method drawAliens
+ * @param resized
+ */
 function drawAliens(resized) {
   for (var i = 0; i < aliens.length; i++) {
     var alien = aliens[i];
@@ -681,6 +914,11 @@ function drawAliens(resized) {
   }
 }
 
+/**
+ * dibujo del juego entero
+ * @method drawGame
+ * @param resized
+ */
 function drawGame(resized) {
   player.draw(resized);
   drawAliens(resized);
@@ -688,11 +926,19 @@ function drawGame(resized) {
   drawBottomHud();
 }
 
+/**
+ * dibujo de la pantalla de inicio
+ * @method drawStartScreen
+ */
 function drawStartScreen() {
   fillCenteredText("Space Invaders", CANVAS_WIDTH/2, CANVAS_HEIGHT/2.75, '#FFFFFF', 36);
   fillBlinkingText("Press enter to play!", CANVAS_WIDTH/2, CANVAS_HEIGHT/2, 500, '#FFFFFF', 36);
 }
 
+/**
+ * animaciones
+ * @method animate
+ */
 function animate() {
   var now = window.performance.now();
   var dt = now - lastTime;
@@ -724,6 +970,10 @@ function animate() {
 // funciones de eventos "Listener"
 //
 // ###################################################################
+/**
+ * reescalado
+ * @method resize
+ */
 function resize() {
   var w = window.innerWidth;
   var h = window.innerHeight;
@@ -743,11 +993,21 @@ function resize() {
   }
 }
 
+/**
+ * funcion de presion de tecla
+ * @method inKeyDown
+ * @param e
+ */
 function onKeyDown(e) {
   e.preventDefault();
   keyStates[e.keyCode] = true;
 }
 
+/**
+ * funcion de soltar tecla
+ * @method onKeyUp
+ * @param e
+ */
 function onKeyUp(e) {
   e.preventDefault();
   keyStates[e.keyCode] = false;
@@ -758,10 +1018,19 @@ function onKeyUp(e) {
 // Start game!
 //
 // ###################################################################
+/**
+ * inicializacion del juego
+ * @method ini
+ */
 function ini() {
   init();
   animate();
 }
+
+/**
+ * paso desde el index.html a game.html
+ * @method cargarWeb
+ */
 function cargarWeb(){
 
   var nom, edad, urlGame;
@@ -777,6 +1046,11 @@ function cargarWeb(){
 
 
 }
+
+/**
+ *
+ */
+
 function J(){
   ini();
   var urlGame, nom, edad;
