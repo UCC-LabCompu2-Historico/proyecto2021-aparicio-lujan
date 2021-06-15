@@ -79,16 +79,17 @@ body, html{
     top: 5px;
     margin: 5px;
     border: 2px solid black;
+    right: 20px;
 }
 
-#esp {
+#x {
     position: relative;
-    width: 250px;
+    width: 75px;
     height: 75px;
-    top: 5px;
+    top:    10px;
     margin: 5px;
     border: 2px solid black;
-    left: 45px;
+    left: 130px;
 }
 
 footer {
