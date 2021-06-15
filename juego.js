@@ -1,3 +1,10 @@
+function ponerNom(){
+  var urlGame, nom, edad;
+
+  urlGame = window.location.href;
+  console.log(urlGame);
+}
+
 (function(){
     var initializing = false, fnTest = /xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/;
    
@@ -761,3 +768,4 @@
     init();
     animate();
   };
+

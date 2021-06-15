@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="CSS/Stargame.css" type="text/css">
-    <script type="text/javascript" src="juego2.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="juego.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,13 +36,25 @@
         <input type="text" name="Name" id="Name" placeholder="Enter Name">
 
         <div class="difi">
-            <label for="Difi">- Dificultad:</label>
+            <label for="Difi">- Edad</label>
             <select id="Difi">
-                <option value="Facil">Facil</option>
-                <option value="Normal">Normal</option>
-                <option value="Dificil">Dificil</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+
             </select>
-            <button onclick="cargarWeb" class="button">Play!</button>
+            <button type="button" onclick="cargarWeb()" class="button">Play!</button>
         </div>
     </div>
     <div class="audio">
