@@ -1,8 +1,3 @@
-/* Simple JavaScript Inheritance
- * By John Resig http://ejohn.org/
- * MIT Licensed.
- */
-// Inspired by base2 and Prototype
 (function(){
     var initializing = false, fnTest = /xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/;
    
@@ -613,6 +608,7 @@
       var alien = aliens[i];
       if (alien.bullet !== null && checkRectCollision(alien.bullet.bounds, player.bounds)) {
         if (player.lives === 0) {
+          alert("                                   -GAME        OVER- ",player.score);
           hasGameStarted = false;
         } else {
          alien.bullet.alive = false;
@@ -673,7 +669,7 @@
                    player.clipRect.h, 45, CANVAS_HEIGHT - 23, player.clipRect.w * 0.5,
                    player.clipRect.h * 0.5);
     fillText('CREDIT: ', CANVAS_WIDTH - 115, CANVAS_HEIGHT - 7.5);
-    fillCenteredText('SCORE: ' + player.score, CANVAS_WIDTH/2, 20);
+    fillCenteredText('SCORE: ' + player.score, CANVAS_WIDTH/10, 20);
     fillBlinkingText('00', CANVAS_WIDTH - 25, CANVAS_HEIGHT - 7.5, TEXT_BLINK_FREQ);
   }
   
