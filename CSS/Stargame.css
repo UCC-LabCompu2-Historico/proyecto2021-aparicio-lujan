@@ -17,7 +17,6 @@
     background-attachment: fixed;
 }
 
-
 .content img {
 
     width: 700px;
@@ -28,14 +27,10 @@ footer {
     position: absolute;
     bottom: 0;
     color: white;
-
 }
 
 footer h3 {
-
     font-size: 20px;
-
-
 }
 
 .Caja {
@@ -49,27 +44,20 @@ footer h3 {
     border: 5px #000000 solid;
 }
 
-
 .Caja h1 {
     background-color: #514f3b;
     font-size: 30px;
     text-align: center;
     padding-top: 10px;
-
-
 }
-.Nombre 
- {
 
+.Nombre {
     font-size: 25px;
     padding-top: 10px;
-
-
 }
 
 ::placeholder {
     font-size: 10px;
-
 }
 
 #Name {
@@ -81,7 +69,6 @@ footer h3 {
     -webkit-appearance: none;
     height: 35px;
     font-size: 20px;
-
 }
 
 .button {
@@ -91,13 +78,11 @@ footer h3 {
     padding: 15px;
     background: white;
     margin-left: 21.5%;
-
 }
 
 a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
-
     text-align: center;
     justify-content: center;
     text-decoration: none;
@@ -106,34 +91,23 @@ a.button {
 
 a.button:hover {
     background-color: thistle;
-
-
 }
 
-
 #Difi {
-
     border-style: hidden;
     display: block;
     margin: 20px auto;
     min-width: 200px;
     height: 40px;
     font-size: 20px;
-
-
 }
 
 .difi {
-
     font-size: 25px;
-
-
 }
 
 .audio {
-
     position: absolute;
     margin-left: 50px;
     margin-top: 100px;
-
 }
