@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d976b353-539f-451f-8c73-d78d6830b5d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/game.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/juego.js" beforeDir="false" afterPath="$PROJECT_DIR$/juego.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +21,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Git/Ejercicio2/ejercicios2021-tomyaparicio" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -43,7 +39,8 @@
       <updated>1623739674964</updated>
       <workItem from="1623739676143" duration="1014000" />
       <workItem from="1623785690653" duration="653000" />
-      <workItem from="1623786379902" duration="1271000" />
+      <workItem from="1623786379902" duration="4352000" />
+      <workItem from="1623969118583" duration="31000" />
     </task>
     <servers />
   </component>
