@@ -1,3 +1,4 @@
+
 function cargarWeb(){
 
   var nom, edad, urlGame;
@@ -56,6 +57,7 @@ function DibujarFondo() {
   ctx4.drawImage(invasor, 0, 0)
   }
 }*/
+
 
 
 
