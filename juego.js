@@ -4,9 +4,6 @@ function cargarWeb(){
   var nom, edad, urlGame;
   nom=document.getElementById("Name").value
   edad=document.getElementById("Difi").value
-
-
-
   urlGame = "game.html#" + nom + "#" + edad;
   if(nom!==""){
     window.open(urlGame);
@@ -61,6 +58,31 @@ function DibujarFondo() {
     Funciones de Jugador/Player
  *************************************/
 
+//width="1200" height="800"
+
+const GAME_STATE = {
+  playerX: 0,
+  playerY: 0,
+}
+
+function setPosition($el, x, y){
+  $el.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function createPlayer ($container){
+  GAME_STATE.playerX = 1200/2;
+  GAME_STATE.playerY = 800 - 50;
+  const $player = document.createElement("img");
+  $player.src = "Imagenes/nave.png";
+  $player.className= "player";
+  $container.appendChild($player);
+  setPosition($player, GAME_STATE.playerX, GAME_STATE.playerY);
+}
+function init(){
+  const $container = document.querySelector(".juego");
+  createPlayer ($container);
+}
+init();
 
 
 
