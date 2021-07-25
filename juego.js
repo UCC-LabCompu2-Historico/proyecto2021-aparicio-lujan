@@ -57,6 +57,9 @@ function DibujarFondo() {
   ctx4.drawImage(invasor, 0, 0)
   }
 }*/
+/* ************************************
+    Funciones de Jugador/Player
+ *************************************/
 
 
 
