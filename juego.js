@@ -96,9 +96,9 @@ function dibujarEnemigos(ctx) {
   }*/
 
 function dibujarAliado(){
-  canvas.width=canvas.width;
+  //canvas.width=canvas.width;
   naveAliada.dibujar();
-  if (rightPressed && naveAliada.posX<canvas.width){
+  if (rightPressed && naveAliada.posX<canvas.width - 50){
 
     naveAliada.posX+=7;
   }else if(leftPressed && naveAliada.posX>0){
