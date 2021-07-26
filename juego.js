@@ -1,3 +1,6 @@
+var canvas = document.getElementById("game-canvas");
+var ctx = canvas.getContext("2d");
+
 var edad;
 function cargarWeb(){
   var nom, urlGame;
@@ -20,11 +23,10 @@ function J(){
 }
 
 function armarPantalla() {
-  const canvas = document.getElementById("game-canvas");
-  let ctx = canvas.getContext("2d");
   dibujarFondo(ctx);
   dibujarHub(ctx);
   dibujarEnemigos(ctx);
+  dibujarAliado(ctx)
 }
 
 function dibujarHub(ctx) {
@@ -85,47 +87,63 @@ function dibujarEnemigos(ctx) {
     Funciones de Jugador/Player
  *************************************/
 
-//width="1200" height="800"
-const KEY_CODE_LEFT= 37;
-const KEY_CODE_RIGHT= 39;
-const KEY_CODE_X= 88;
+/*function dibujarAliado(ctx) {
+  const aliado = document.createElement("img");
+  aliado.src = "Imagenes/nave.png";
+  aliado.onload = function () {
+      ctx.drawImage(aliado, 550 , 700);
+    }
+  }*/
 
-const GAME_STATE = {
-  playerX: 0,
-  playerY: 0,
-}
+function dibujarAliado(){
+  canvas.width=canvas.width;
+  naveAliada.dibujar();
+  if (rightPressed && naveAliada.posX<canvas.width){
 
-function setPosition($el, x, y){
-  $el.style.transform = `translate(${x}px, ${y}px)`;
-}
+    naveAliada.posX+=7;
+  }else if(leftPressed && naveAliada.posX>0){
 
-function dibujarJugador ($container){
-  GAME_STATE.playerX = 1200/2;
-  GAME_STATE.playerY = 800 - 50;
-  const $player = document.createElement("img");
-  $player.src = "Imagenes/nave.png";
-  $player.className= "player";
-  $container.appendChild($player);
-  setPosition($player, GAME_STATE.playerX, GAME_STATE.playerY);
-}
-function init(){
-  const $container = document.querySelector(".juego");
-  dibujarJugador ($container);
-}
-
-function onKeyDown(e){
-  if (e.keyCode === KEY_CODE_LEFT){
-    GAME_STATE.playerX -= 5;
-    const $player = document.querySelector('.player');
-    setPosition($player, GAME_STATE.playerX, GAME_STATE.playerY);
-  }else if (e.keyCode === KEY_CODE_RIGHT){
-    GAME_STATE.playerX += 5;
-    const $player = document.querySelector('.player');
-    setPosition($player, GAME_STATE.playerX, GAME_STATE.playerY);
+    naveAliada.posX-=7;
   }
 }
-init();
-window.addEventListener("keydown",onKeyDown);
+setInterval(dibujarAliado,10)
+
+var naveAliada = {
+  posX: (canvas.width-50)/2,
+  dibujar: function (){
+    ctx.beginPath();
+    ctx.fillRect(this.posX,790,50,50);
+    ctx.fillStyle = "#00ce0f";
+    ctx.fill();
+    ctx.closePath();
+  }
+};
+
+var leftPressed= false;
+var rightPressed = false;
+document.addEventListener("keydown", keyDownHandler,false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+function keyDownHandler(e){
+  if(e.keyCode === 39){
+    rightPressed = true;
+  }
+  else if(e.keyCode === 37){
+    leftPressed= true;
+  }
+}
+
+function keyUpHandler(e){
+  if(e.keyCode === 39){
+    rightPressed = false;
+  }
+  else if(e.keyCode === 37){
+    leftPressed = false;
+  }
+}
+
+
+
 
 
 
