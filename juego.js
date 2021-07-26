@@ -1,7 +1,8 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-
 var edad;
+//edad=document.getElementById("Difi").value
+
 function cargarWeb(){
   var nom, urlGame;
   nom=document.getElementById("Name").value
@@ -61,7 +62,9 @@ function dibujarLife(ctx) {
 
 function dibujarEnemigos(ctx) {
   const invasor = document.createElement("img");
+  //edad=document.getElementById("Difi").value;
   invasor.src = "Imagenes/inva2.png";
+  alert(edad.value);
   if (edad === 'hard') {
     invasor.onload = function () {
       for (let i = 0; i < 5; i++) {
@@ -69,6 +72,8 @@ function dibujarEnemigos(ctx) {
         ctx.drawImage(invasor, (200 + j), 100);
         ctx.drawImage(invasor, (200 + j), 200);
         ctx.drawImage(invasor, (200 + j), 300);
+        ctx.drawImage(invasor, (200 + j), 400);
+        ctx.drawImage(invasor, (200 + j), 500);
       }
     }
   }
@@ -79,6 +84,7 @@ function dibujarEnemigos(ctx) {
         ctx.drawImage(invasor, (200 + j), 100);
         ctx.drawImage(invasor, (200 + j), 200);
         ctx.drawImage(invasor, (200 + j), 300);
+        //alert("usted a ingresado a dificultad facil!");
       }
     }
   }
