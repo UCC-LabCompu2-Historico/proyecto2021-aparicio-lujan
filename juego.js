@@ -1,26 +1,25 @@
 
-
+var edad;
 function cargarWeb(){
 
-  var nom, edad, urlGame;
+  var nom, urlGame;
   nom=document.getElementById("Name").value
   edad=document.getElementById("Difi").value
-
+alert(edad);
 
 
   urlGame = "game.html#" + nom + "#" + edad;
   if(nom!==""){
     window.open(urlGame);
   }else alert("Ingrese un Nombre Por Favor");
-
 }
 function J(){
-  var urlGame, nom, edad;
+  var urlGame, nom, difi;
   urlGame = window.location.href.split("/")[4];
-  nom = urlGame.split("#")[1]
-  edad = urlGame.split("#")[2];
+  nom = urlGame.split("#")[1];
+  difi= urlGame.split("#")[2];
   document.getElementById("Snombre").innerHTML = nom;
-  document.getElementById("Sage").innerHTML = edad;
+  document.getElementById("Sdifi").innerHTML = difi;
 }
 
 
@@ -63,30 +62,47 @@ function dibujarLife(ctx) {
   life.src = "Imagenes/lives.png";
 }
 
-function dibujarEnemigos(ctx){
-  const invasor = document.createElement("img")
-  invasor.onload = function () {
-  ctx.drawImage(invasor, 450, 100)
-  };
+function dibujarEnemigos(ctx) {
+  const invasor = document.createElement("img");
   invasor.src = "Imagenes/inva2.png";
-  invasor.sizes = 2;
-}
+  if (edad === 'hard') {
+
+    invasor.onload = function () {
+      for (let i = 0; i < 5; i++) {
+        let j = i * 200;
+        ctx.drawImage(invasor, (200 + j), 100);
+        ctx.drawImage(invasor, (200 + j), 200);
+        ctx.drawImage(invasor, (200 + j), 300);
+      }
+    }
+  }
+  else{
+    invasor.onload = function () {
+      for (let i = 0; i < 3; i++) {
+        let j = i * 350;
+        ctx.drawImage(invasor, (200 + j), 100);
+        ctx.drawImage(invasor, (200 + j), 200);
+        ctx.drawImage(invasor, (200 + j), 300);
+
+      }
+    }
+  }
 /* ************************************
     Funciones de Jugador/Player
  *************************************/
 
 //width="1200" height="800"
 
-const GAME_STATE = {
-  playerX: 0,
-  playerY: 0,
+// const GAME_STATE = {
+//   playerX: 0,
+ // playerY: 0,
 }
 
-function setPosition($el, x, y){
-  $el.style.transform = `translate(${x}px, ${y}px)`;
-}
+//function setPosition($el, x, y){
+ // $el.style.transform = `translate(${x}px, ${y}px)`;
+//}
 
-function createPlayer ($container){
+/*function createPlayer ($container){
   GAME_STATE.playerX = 1200/2;
   GAME_STATE.playerY = 800 - 50;
   const $player = document.createElement("img");
@@ -98,8 +114,9 @@ function createPlayer ($container){
 function init(){
   const $container = document.querySelector(".juego");
   createPlayer ($container);
-}
-init();
+}*/
+//init();
+//}
 
 
 
