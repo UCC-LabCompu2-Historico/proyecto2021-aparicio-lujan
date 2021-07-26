@@ -1,14 +1,13 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-var edad;
-//edad=document.getElementById("Difi").value
+var level;
+
 
 function cargarWeb(){
   var nom, urlGame;
-  nom=document.getElementById("Name").value
-  edad=document.getElementById("Difi").value
-  alert(edad);
-  urlGame = "game.html#" + nom + "#" + edad;
+  nom=document.getElementById("Name").value;
+  level=document.getElementById("level").value;
+  urlGame = "game.html#" + nom + "#" + level;
   if(nom!==""){
     window.open(urlGame);
   }else alert("Ingrese un Nombre Por Favor");
@@ -16,7 +15,7 @@ function cargarWeb(){
 
 function J(){
   var urlGame, nom, difi;
-  urlGame = window.location.href.split("/")[4];
+  urlGame = window.location.href.split("/")[5];
   nom = urlGame.split("#")[1];
   difi= urlGame.split("#")[2];
   document.getElementById("Snombre").innerHTML = nom;
@@ -62,33 +61,36 @@ function dibujarLife(ctx) {
 
 function dibujarEnemigos(ctx) {
   const invasor = document.createElement("img");
-  //edad=document.getElementById("Difi").value;
+ let urlGame = window.location.href.split("/")[5];
+  level=urlGame.split("#")[2];
+  console.log(level);
   invasor.src = "Imagenes/inva2.png";
-  alert(edad.value);
-  if (edad === 'hard') {
-    invasor.onload = function () {
-      for (let i = 0; i < 5; i++) {
-        let j = i * 200;
-        ctx.drawImage(invasor, (200 + j), 100);
-        ctx.drawImage(invasor, (200 + j), 200);
-        ctx.drawImage(invasor, (200 + j), 300);
-        ctx.drawImage(invasor, (200 + j), 400);
-        ctx.drawImage(invasor, (200 + j), 500);
+  switch (level) {
+    case "easy":
+          invasor.onload = function () {
+          for (let i = 0; i < 3; i++) {
+            let j = i * 350;
+            ctx.drawImage(invasor, (200 + j), 100);
+            ctx.drawImage(invasor, (200 + j), 200);
+            ctx.drawImage(invasor, (200 + j), 300);
+          }
+        }
+
+      break;
+      default:
+        invasor.onload = function () {
+        for (let i = 0; i < 5; i++) {
+          let j = i * 200;
+          ctx.drawImage(invasor, (200 + j), 100);
+          ctx.drawImage(invasor, (200 + j), 200);
+          ctx.drawImage(invasor, (200 + j), 300);
+          ctx.drawImage(invasor, (200 + j), 400);
+          ctx.drawImage(invasor, (200 + j), 500);
+        }
       }
     }
   }
-  else{
-    invasor.onload = function () {
-      for (let i = 0; i < 3; i++) {
-        let j = i * 350;
-        ctx.drawImage(invasor, (200 + j), 100);
-        ctx.drawImage(invasor, (200 + j), 200);
-        ctx.drawImage(invasor, (200 + j), 300);
-        //alert("usted a ingresado a dificultad facil!");
-      }
-    }
-  }
-}
+
 /* ************************************
     Funciones de Jugador/Player
  *************************************/

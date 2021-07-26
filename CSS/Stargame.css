@@ -93,7 +93,7 @@ a.button:hover {
     background-color: thistle;
 }
 
-#Difi {
+#level{
     border-style: hidden;
     display: block;
     margin: 20px auto;
@@ -102,7 +102,7 @@ a.button:hover {
     font-size: 20px;
 }
 
-.difi {
+.level {
     font-size: 25px;
 }
 
