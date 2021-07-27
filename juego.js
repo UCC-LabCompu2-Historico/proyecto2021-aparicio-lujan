@@ -99,10 +99,12 @@ function dibujarEnemigos(ctx) {
 /* ************************************
     Funciones de Jugador/Player
  *************************************/
+var posisiones = {
+  posX: (canvas.width)/2,
+}
 
 function dibujarAliado() {
-  ctx.drawImage(objImagen, 500 , 150);
-  window.setTimeout(function (){ctx.drawImage(objImagen, 50, 50)},200);
+  window.setTimeout(function (){ctx.drawImage(objImagen,this.posX, 500)},200);
   console.log(dibujarAliado);
   }
 
