@@ -1,6 +1,8 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var level;
+var objImagen = new Image();
+objImagen.src = "Imagenes/nave.png";
 
 
 function cargarWeb(){
@@ -26,7 +28,7 @@ function armarPantalla() {
   dibujarFondo(ctx);
   dibujarHub(ctx);
   dibujarEnemigos(ctx);
-  dibujarAliado(ctx)
+  //dibujarAliado(ctx)
 }
 
 function dibujarHub(ctx) {
@@ -95,15 +97,11 @@ function dibujarEnemigos(ctx) {
     Funciones de Jugador/Player
  *************************************/
 
-/*function dibujarAliado(ctx) {
-  const aliado = document.createElement("img");
-  aliado.src = "Imagenes/nave.png";
-  aliado.onload = function () {
-      ctx.drawImage(aliado, 550 , 700);
-    }
-  }*/
+function dibujarAliado() {
+  ctx.drawImage(objImagen, 50, 50);
+  }
 
-function dibujarAliado(){
+/*function dibujarAliado(){
   //canvas.width=canvas.width;
   naveAliada.dibujar();
   if (rightPressed && naveAliada.posX<canvas.width - 50){
@@ -148,7 +146,9 @@ function keyUpHandler(e){
   else if(e.keyCode === 37){
     leftPressed = false;
   }
-}
+}*/
+
+
 
 
 
