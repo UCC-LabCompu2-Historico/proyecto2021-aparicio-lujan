@@ -3,7 +3,7 @@
     */
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-var level = " ";
+var level;
 var objImagen = new Image();
 objImagen.src = "Imagenes/nave.png";
 
@@ -213,7 +213,6 @@ function keyUpHandler(e) {
         leftPressed = false;
     }
 }
-
 
 var Jugador = {
     posX: (canvas.width - 75) / 2,
