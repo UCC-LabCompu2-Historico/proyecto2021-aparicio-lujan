@@ -49,6 +49,7 @@ function dibujarScore(ctx) {
   const score = document.createElement('img');
   score.onload = function () {
     ctx.drawImage(score, 0, 0)
+    window.setTimeout(function (){ctx.drawImage(score, 0, 0)},50);
   };
   score.src = "Imagenes/score.png";
 }
@@ -57,19 +58,20 @@ function dibujarLife(ctx) {
   const life = document.createElement('img');
   life.onload = function () {
     ctx.drawImage(life, 950, 0)
+    window.setTimeout(function (){ctx.drawImage(life, 950, 0)},50);
   };
   life.src = "Imagenes/lives.png";
 }
 
 function dibujarEnemigos(ctx) {
-  const invasor = document.createElement("img");
- let urlGame = window.location.href.split("/")[5];
-  level=urlGame.split("#")[2];
-  console.log(level);
-  invasor.src = "Imagenes/inva2.png";
-  switch (level) {
-    case "easy":
-          invasor.onload = function () {
+  window.setTimeout(function (){
+    const invasor = document.createElement("img");
+    let urlGame = window.location.href.split("/")[5];
+    level=urlGame.split("#")[2];
+    invasor.src = "Imagenes/inva2.png";
+    switch (level) {
+      case "easy":
+        invasor.onload = function () {
           for (let i = 0; i < 3; i++) {
             let j = i * 350;
             ctx.drawImage(invasor, (200 + j), 100);
@@ -78,19 +80,20 @@ function dibujarEnemigos(ctx) {
           }
         }
 
-      break;
+        break;
       default:
         invasor.onload = function () {
-        for (let i = 0; i < 5; i++) {
-          let j = i * 200;
-          ctx.drawImage(invasor, (200 + j), 100);
-          ctx.drawImage(invasor, (200 + j), 200);
-          ctx.drawImage(invasor, (200 + j), 300);
-          ctx.drawImage(invasor, (200 + j), 400);
-          ctx.drawImage(invasor, (200 + j), 500);
+          for (let i = 0; i < 5; i++) {
+            let j = i * 200;
+            ctx.drawImage(invasor, (200 + j), 100);
+            ctx.drawImage(invasor, (200 + j), 200);
+            ctx.drawImage(invasor, (200 + j), 300);
+            ctx.drawImage(invasor, (200 + j), 400);
+            ctx.drawImage(invasor, (200 + j), 500);
+          }
         }
-      }
     }
+  },50);
   }
 
 /* ************************************
