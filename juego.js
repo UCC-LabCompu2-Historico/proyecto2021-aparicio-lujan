@@ -112,10 +112,10 @@ function rightPressed() {
 function movimiento(e) {
   switch (e.keyCode) {
     case 37:
-      leftArrowPressed();
+      leftPressed();
       break;
     case 39:
-      rightArrowPressed();
+      rightPressed();
       break;
 };
 }
