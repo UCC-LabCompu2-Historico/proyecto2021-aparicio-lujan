@@ -28,12 +28,13 @@ function armarPantalla() {
   dibujarFondo(ctx);
   dibujarHub(ctx);
   dibujarEnemigos(ctx);
-  //dibujarAliado(ctx)
+
 }
 
 function dibujarHub(ctx) {
   dibujarScore(ctx);
   dibujarLife(ctx);
+  dibujarAliado(ctx);
 }
 
 function dibujarFondo(ctx) {
@@ -99,6 +100,8 @@ function dibujarEnemigos(ctx) {
 
 function dibujarAliado() {
   ctx.drawImage(objImagen, 50, 50);
+  window.setTimeout(function (){ctx.drawImage(objImagen, 50, 50)},200);
+  console.log(dibujarAliado);
   }
 
 /*function dibujarAliado(){
