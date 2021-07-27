@@ -4,6 +4,13 @@ var level;
 var objImagen = new Image();
 objImagen.src = "Imagenes/nave.png";
 
+/**
+ * Descripción
+ * @method Nombre de la función
+ * @param Parámetro A
+ * @param Parámetro B
+ * @return Valor que retorna
+ */
 
 function cargarWeb(){
   var nom, urlGame;
@@ -15,6 +22,14 @@ function cargarWeb(){
   }else alert("Ingrese un Nombre Por Favor");
 }
 
+/**
+ * Descripción
+ * @method Nombre de la función
+ * @param Parámetro A
+ * @param Parámetro B
+ * @return Valor que retorna
+ */
+
 function J(){
   var urlGame, nom, difi;
   urlGame = window.location.href.split("/")[5];
@@ -24,17 +39,58 @@ function J(){
   document.getElementById("Sdifi").innerHTML = difi;
 }
 
+/**
+ * Descripción
+ * @method Nombre de la función
+ * @param Parámetro A
+ * @param Parámetro B
+ * @return Valor que retorna
+ */
+
 function armarPantalla() {
   dibujarFondo(ctx);
   dibujarHub(ctx);
   dibujarEnemigos(ctx);
 }
+/**
+* Funcion que se encarga de dar movimiento a la naveJugador
+* @method moverJugador
+*/
+
+function moverJugador(){
+  Jugador.dibujar();
+  if (rightPressed){
+    canvas.width=canvas.width;
+    armarPantalla();
+    Jugador.posX += 7;
+  }else if(leftPressed){
+    canvas.width=canvas.width;
+    armarPantalla();
+    Jugador.posX-=7;
+  }
+}
+setInterval(moverJugador,1);
+
+/**
+ * Descripción
+ * @method Nombre de la función
+ * @param Parámetro A
+ * @param Parámetro B
+ * @return Valor que retorna
+ */
 
 function dibujarHub(ctx) {
   dibujarScore(ctx);
   dibujarLife(ctx);
-  dibujarAliado(ctx);
 }
+
+/**
+ * Descripción
+ * @method Nombre de la función
+ * @param Parámetro A
+ * @param Parámetro B
+ * @return Valor que retorna
+ */
 
 function dibujarFondo(ctx) {
   const fondo = document.createElement('img');
@@ -45,6 +101,14 @@ function dibujarFondo(ctx) {
   fondo.src = "Imagenes/estrellas.png";
 }
 
+/**
+ * Descripción
+ * @method Nombre de la función
+ * @param Parámetro A
+ * @param Parámetro B
+ * @return Valor que retorna
+ */
+
 function dibujarScore(ctx) {
   const score = document.createElement('img');
   score.onload = function () {
@@ -54,6 +118,14 @@ function dibujarScore(ctx) {
   score.src = "Imagenes/score.png";
 }
 
+/**
+ * Descripción
+ * @method Nombre de la función
+ * @param Parámetro A
+ * @param Parámetro B
+ * @return Valor que retorna
+ */
+
 function dibujarLife(ctx) {
   const life = document.createElement('img');
   life.onload = function () {
@@ -62,6 +134,14 @@ function dibujarLife(ctx) {
   };
   life.src = "Imagenes/lives.png";
 }
+
+/**
+ * Descripción
+ * @method Nombre de la función
+ * @param Parámetro A
+ * @param Parámetro B
+ * @return Valor que retorna
+ */
 
 function dibujarEnemigos(ctx) {
   window.setTimeout(function (){
@@ -79,7 +159,6 @@ function dibujarEnemigos(ctx) {
             ctx.drawImage(invasor, (200 + j), 300);
           }
         }
-
         break;
       default:
         invasor.onload = function () {
@@ -99,65 +178,17 @@ function dibujarEnemigos(ctx) {
 /* ************************************
     Funciones de Jugador/Player
  *************************************/
-var posisiones = {
-  posX: (canvas.width)/2,
-}
-
-function dibujarAliado() {
-  window.setTimeout(function (){ctx.drawImage(objImagen,this.posX, 500)},200);
-  console.log(dibujarAliado);
-  }
-
-  function leftPressed(){
-  objImagen.style.left = parseInt(objImagen.style.left) + 5 + 'px';
-  }
-function rightPressed() {
-  objImagen.style.left = parseInt(objImagen.style.left) - 5 + 'px';
-}
-function movimiento(e) {
-  switch (e.keyCode) {
-    case 37:
-      leftPressed();
-      break;
-    case 39:
-      rightPressed();
-      break;
-};
-}
-function docReady() {
-  window.addEventListener('keydown', movimiento);
-}
-
-
-
-/*function dibujarAliado(){
-  //canvas.width=canvas.width;
-  naveAliada.dibujar();
-  if (rightPressed && naveAliada.posX<canvas.width - 50){
-
-    naveAliada.posX+=7;
-  }else if(leftPressed && naveAliada.posX>0){
-
-    naveAliada.posX-=7;
-  }
-}
-setInterval(dibujarAliado,10)
-
-var naveAliada = {
-  posX: (canvas.width-50)/2,
-  dibujar: function (){
-    ctx.beginPath();
-    ctx.fillRect(this.posX,790,50,50);
-    ctx.fillStyle = "#00ce0f";
-    ctx.fill();
-    ctx.closePath();
-  }
-};
 
 var leftPressed= false;
 var rightPressed = false;
 document.addEventListener("keydown", keyDownHandler,false);
 document.addEventListener("keyup", keyUpHandler, false);
+
+/**
+* Funcion que se encarga de detectar si la teclas son presionadas
+* @method keyDownHandler
+* @param Parámetro e
+*/
 
 function keyDownHandler(e){
   if(e.keyCode === 39){
@@ -168,6 +199,12 @@ function keyDownHandler(e){
   }
 }
 
+/**
+* Funcion que se encarga de detectar si la tecla se dejo de presionar
+* @method keyUpHandler
+* @param Parámetro e
+*/
+
 function keyUpHandler(e){
   if(e.keyCode === 39){
     rightPressed = false;
@@ -175,13 +212,15 @@ function keyUpHandler(e){
   else if(e.keyCode === 37){
     leftPressed = false;
   }
-}*/
+}
 
 
-
-
-
-
+var Jugador = {
+  posX: (canvas.width-75)/2,
+dibujar: function() {
+  window.setTimeout(function (){ctx.drawImage(objImagen,Jugador.posX, 690)},200);
+  }
+}
 
 
 
