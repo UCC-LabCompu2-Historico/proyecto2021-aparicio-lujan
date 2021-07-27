@@ -1,3 +1,6 @@
+/* en la linea 4 y 5 usamos las variables globlales por que en cada una de las funciones se repetia lo mismo
+   en la linea 6 utilizamos la goblal level para despues poder elegir el nivel ya sea dificl o facil
+    */
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var level;
@@ -5,11 +8,8 @@ var objImagen = new Image();
 objImagen.src = "Imagenes/nave.png";
 
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Descripción Asigna nombre y nivel
+ * @method cargarWeb
  */
 
 function cargarWeb(){
@@ -23,7 +23,7 @@ function cargarWeb(){
 }
 
 /**
- * Descripción
+ * Descripción Carga el nombre y nivle en la nueva pagina
  * @method Nombre de la función
  * @param Parámetro A
  * @param Parámetro B
@@ -32,19 +32,19 @@ function cargarWeb(){
 
 function J(){
   var urlGame, nom, difi;
-  urlGame = window.location.href.split("/")[5];
-  nom = urlGame.split("#")[1];
-  difi= urlGame.split("#")[2];
-  document.getElementById("Snombre").innerHTML = nom;
-  document.getElementById("Sdifi").innerHTML = difi;
+  window.setTimeout(function (){
+    urlGame = window.location.href.split("/")[4];
+    nom = urlGame.split("#")[1];
+    difi= urlGame.split("#")[2];
+    document.getElementById("Snombre").innerHTML = nom;
+    document.getElementById("Sdifi").innerHTML = difi;
+  },10)
+
 }
 
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Descripción inicia el canvas con sus respetivos objetos
+ * @method armarPantalla
  */
 
 function armarPantalla() {
@@ -58,25 +58,23 @@ function armarPantalla() {
 */
 
 function moverJugador(){
-  Jugador.dibujar();
-  if (rightPressed){
+  Jugador.dibujar(ctx);
+  if (rightPressed && Jugador.posX<1200) {
     canvas.width=canvas.width;
-    armarPantalla();
+    armarPantalla(ctx);
     Jugador.posX += 7;
-  }else if(leftPressed){
+  }else if(leftPressed && Jugador.posX>0){
     canvas.width=canvas.width;
-    armarPantalla();
+    armarPantalla(ctx);
     Jugador.posX-=7;
   }
 }
-setInterval(moverJugador,1);
+setInterval(moverJugador,10);
 
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Descripción Dibuja el interfaz del juego
+ * @method dibujarHub
+ * @param Parámetro ctx
  */
 
 function dibujarHub(ctx) {
@@ -85,11 +83,9 @@ function dibujarHub(ctx) {
 }
 
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Descripción Dibuja el fondo del canvas
+ * @method dibujarFondo
+ * @param Parámetro ctx
  */
 
 function dibujarFondo(ctx) {
@@ -102,11 +98,9 @@ function dibujarFondo(ctx) {
 }
 
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Descripción Dibuja la palabra Score en la esquina superior izquierda
+ * @method dibujarScore
+ * @param Parámetro ctx
  */
 
 function dibujarScore(ctx) {
@@ -119,11 +113,9 @@ function dibujarScore(ctx) {
 }
 
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Descripción Dibuja la palbra life en la esquina superior derecha
+ * @method dibujarLife
+ * @param Parámetro ctx
  */
 
 function dibujarLife(ctx) {
@@ -136,17 +128,16 @@ function dibujarLife(ctx) {
 }
 
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Descripción dibuja las naves enemigas en el canvas
+ * @method dibujarEnemigos
+ * @param Parámetro ctx
+ *
  */
 
 function dibujarEnemigos(ctx) {
   window.setTimeout(function (){
     const invasor = document.createElement("img");
-    let urlGame = window.location.href.split("/")[5];
+    let urlGame = window.location.href.split("/")[4];
     level=urlGame.split("#")[2];
     invasor.src = "Imagenes/inva2.png";
     switch (level) {
