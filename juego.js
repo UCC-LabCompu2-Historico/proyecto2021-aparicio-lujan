@@ -28,7 +28,6 @@ function armarPantalla() {
   dibujarFondo(ctx);
   dibujarHub(ctx);
   dibujarEnemigos(ctx);
-
 }
 
 function dibujarHub(ctx) {
@@ -99,10 +98,32 @@ function dibujarEnemigos(ctx) {
  *************************************/
 
 function dibujarAliado() {
-  ctx.drawImage(objImagen, 50, 50);
+  ctx.drawImage(objImagen, 500 , 150);
   window.setTimeout(function (){ctx.drawImage(objImagen, 50, 50)},200);
   console.log(dibujarAliado);
   }
+
+  function leftPressed(){
+  objImagen.style.left = parseInt(objImagen.style.left) + 5 + 'px';
+  }
+function rightPressed() {
+  objImagen.style.left = parseInt(objImagen.style.left) - 5 + 'px';
+}
+function movimiento(e) {
+  switch (e.keyCode) {
+    case 37:
+      leftArrowPressed();
+      break;
+    case 39:
+      rightArrowPressed();
+      break;
+};
+}
+function docReady() {
+  window.addEventListener('keydown', movimiento);
+}
+
+
 
 /*function dibujarAliado(){
   //canvas.width=canvas.width;
